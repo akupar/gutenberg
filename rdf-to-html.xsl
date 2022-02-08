@@ -6,6 +6,7 @@
                xmlns:pgterms="http://www.gutenberg.org/2009/pgterms/"
                xmlns:dcterms="http://purl.org/dc/terms/"
                xmlns:xhtml="http://www.w3.org/1999/xhtml"
+               xmlns:dcam="http://purl.org/dc/dcam/"
                >
   <xsl:param name="date" />
   <xsl:output method="html" indent="yes"/>
@@ -38,6 +39,8 @@
               <td>Nimeke</td>
               <td>Julkaistu</td>
               <td>Julkaisija</td>
+              <td>LCSH</td>
+              <td>LCC</td>
             </tr>
           </thead>
           <tbody>
@@ -58,6 +61,8 @@
       <td><a href="{concat('https://gutenberg.org/ebooks/', $id)}"><xsl:apply-templates select="dcterms:title"/></a></td>
       <td><xsl:apply-templates select="dcterms:issued"/></td>
       <td><xsl:value-of select="dcterms:publisher"/></td>
+      <td><xsl:apply-templates select="dcterms:subject/rdf:Description/dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCSH']"/></td>
+      <td><xsl:apply-templates select="dcterms:subject/rdf:Description/dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCC']"/></td>      
     </tr>
   </xsl:template>
 
@@ -81,7 +86,31 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
+  
+  <xsl:template match="dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCSH']">
+        <xsl:variable name="classif" select="../rdf:value" />
+        <xsl:choose>
+          <xsl:when test="position() != last()">
+            <xsl:value-of select="concat($classif, ' + ')"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="$classif"/>
+          </xsl:otherwise>
+        </xsl:choose>
+  </xsl:template>
 
+  <xsl:template match="dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCC']">
+        <xsl:variable name="classif" select="../rdf:value" />
+        <xsl:choose>
+          <xsl:when test="position() != last()">
+            <xsl:value-of select="concat($classif, ' + ')"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="$classif"/>
+          </xsl:otherwise>
+        </xsl:choose>
+  </xsl:template>
+  
 
 
 
