@@ -35,12 +35,12 @@
         <table>
           <thead>
             <tr>
-              <td>Tekijä</td>
-              <td>Nimeke</td>
+              <td id="col-author">Tekijä</td>
+              <td id="col-title">Nimeke</td>
               <td>Julkaistu</td>
               <td>Julkaisija</td>
-              <td>LCSH</td>
-              <td>LCC</td>
+              <td id="col-lcsh">LCSH</td>
+              <td id="col-lcc">LCC</td>
             </tr>
           </thead>
           <tbody>
@@ -56,14 +56,16 @@
 
   <xsl:template match="pgterms:ebook" priority="100">
     <xsl:variable name="id" select="substring-after(@rdf:about, 'ebooks/')"/>
-    <tr>
-      <td><xsl:apply-templates select="dcterms:creator/pgterms:agent/pgterms:name"/></td>
-      <td><a href="{concat('https://gutenberg.org/ebooks/', $id)}"><xsl:apply-templates select="dcterms:title"/></a></td>
-      <td><xsl:apply-templates select="dcterms:issued"/></td>
-      <td><xsl:value-of select="dcterms:publisher"/></td>
-      <td><xsl:apply-templates select="dcterms:subject/rdf:Description/dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCSH']"/></td>
-      <td><xsl:apply-templates select="dcterms:subject/rdf:Description/dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCC']"/></td>      
-    </tr>
+    <xsl:for-each select="dcterms:creator">
+      <tr>
+        <td><xsl:value-of select="./pgterms:agent/pgterms:name"/></td>
+        <td><a href="{concat('https://gutenberg.org/ebooks/', $id)}"><xsl:apply-templates select="../dcterms:title"/></a></td>
+        <td><xsl:apply-templates select="../dcterms:issued"/></td>
+        <td><xsl:value-of select="../dcterms:publisher"/></td>
+        <td><xsl:apply-templates select="../dcterms:subject/rdf:Description/dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCSH']"/></td>
+        <td><xsl:apply-templates select="../dcterms:subject/rdf:Description/dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCC']"/></td>
+      </tr>
+    </xsl:for-each>
   </xsl:template>
 
   <xsl:template match="dcterms:title">
@@ -91,27 +93,18 @@
         <xsl:variable name="classif" select="../rdf:value" />
         <xsl:choose>
           <xsl:when test="position() != last()">
-            <xsl:value-of select="concat($classif, ' + ')"/>
+            <span class="tag"><xsl:value-of select="$classif"/></span><br/>
           </xsl:when>
           <xsl:otherwise>
-            <xsl:value-of select="$classif"/>
+            <span class="tag"><xsl:value-of select="$classif"/></span>
           </xsl:otherwise>
         </xsl:choose>
   </xsl:template>
 
   <xsl:template match="dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCC']">
         <xsl:variable name="classif" select="../rdf:value" />
-        <xsl:choose>
-          <xsl:when test="position() != last()">
-            <xsl:value-of select="concat($classif, ' + ')"/>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:value-of select="$classif"/>
-          </xsl:otherwise>
-        </xsl:choose>
+        <span class="tag"><xsl:value-of select="$classif"/></span>
   </xsl:template>
-  
-
 
 
 </xsl:transform>

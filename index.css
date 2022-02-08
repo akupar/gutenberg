@@ -1,6 +1,8 @@
 table {
-    
+    border-collapse: collapse;
 }
+
+
 
 thead tr {
     background-color: #9c3;        
@@ -13,19 +15,26 @@ tbody tr:nth-child(even) {
 
 .tablesorter-headerAsc .tablesorter-header-inner::after {
     content: " ▼";
-    color: darkgray;
+    color: lightgray;
 }
 
 .tablesorter-headerDesc .tablesorter-header-inner::after {
     content: " ▲";
-    color: darkgray;
+    color: lightgray;
 }
 
 .tablesorter-headerUnSorted .tablesorter-header-inner::after {
     content: " =";
-    color: darkgray;
+    color: lightgray;
 }
 
 thead > tr > td {
     min-width: 6em;
+}
+
+.tag {
+    border: solid gray 1px;
+    background-color: lightgoldenrodyellow;
+    display: inline-block;
+    border-radius: 0.3em;
 }
