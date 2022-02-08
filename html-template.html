@@ -3,53 +3,12 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Project Gutenbergin suomenkieliset kirjat</title>
-    <style type="text/css">
-        table {
-        
-        }
-
-        thead tr {
-            background-color: #9c3;        
-        }
-        
-
-        tbody tr:nth-child(even) {
-            background-color: #ddd;        
-        }
-
-        .tablesorter-headerAsc .tablesorter-header-inner::after {
-            content: " ▼";
-            color: darkgray;
-        }
-
-        .tablesorter-headerDesc .tablesorter-header-inner::after {
-            content: " ▲";
-            color: darkgray;
-        }
-        
-</style>
+    <link rel="stylesheet" href="index.css"/>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.slim.min.js">//
     </script>
     <script type="text/javascript" src="libs/jquery.tablesorter.min.js">//
     </script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-          console.log("hello");
-          $('table').tablesorter({
-              dateFormat: "yyyy-mm-dd",
-
-              usNumberFormat: false,
-
-
-              ignoreCase: true,
-
-
-              sortLocaleCompare: true,
-
-              debug: false,
-
-          });
-      });
+    <script type="text/javascript" src="index.js">
     </script>
   </head>
   <body>

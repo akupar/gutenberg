@@ -7,8 +7,15 @@
                xmlns:dcterms="http://purl.org/dc/terms/"
                xmlns:xhtml="http://www.w3.org/1999/xhtml"
                >
+  <xsl:param name="date" />
   <xsl:output method="html" indent="yes"/>
 
+  <xsl:variable name="most-recent">
+    <xsl:for-each select="/rdf:RDF/pgterms:ebook/dcterms:issued">
+      <xsl:sort data-type="text" order="descending"/>
+      <xsl:if test="position()=1"><xsl:value-of select="."/></xsl:if>
+    </xsl:for-each>
+  </xsl:variable>
 
   <xsl:template match="/rdf:RDF" priority="0">
     <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html&gt;
@@ -19,6 +26,11 @@
         <xsl:copy-of select="document('html-template.html')/xhtml:html/xhtml:head/*"/>
       </head>
       <body>
+        <h1>Project Gutenbergin suomenkieliset kirjat</h1>
+        <p>
+          Päivitetty <xsl:value-of select="$date"/>. Viimeisin luettelon teos julkaistu <xsl:value-of select="$most-recent"/>.
+        </p>
+        
         <table>
           <thead>
             <tr>

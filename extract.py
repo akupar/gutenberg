@@ -23,7 +23,6 @@ def innertext(tag):
 
 def read_file(filename):
     inp = tarfile.TarFile.bz2open(filename)
-    print(inp)
     for info in inp:
         if info.isfile():
             f = inp.extractfile(info)
@@ -73,7 +72,9 @@ if __name__ == "__main__":
     
     newroot = None
     count = 0
-    print("input:", inputfile)
+    count
+    prevlen = 0
+    sys.stdout.write("Extracting ")
     for xmlroot in read_lang_file(inputfile, lang):
         if not newroot:
             newroot = xmlroot
@@ -81,9 +82,13 @@ if __name__ == "__main__":
             ebook = xmlroot.findall('.//pgterms:ebook', prefix_map)
             assert len(ebook) == 1, "Monta ebookia"
             newroot.append(ebook[0])
-            sys.stdout.write(".")
+            sys.stdout.write("\b"*prevlen)
+            sys.stdout.write(str(count))
+            sys.stdout.flush()
+            prevlen = len(str(count))
         count += 1
-        sys.stdout.write("\n")        
+        
+    sys.stdout.write("\n")        
 
     tree = ET.ElementTree(newroot)
     tree.write(output, encoding="utf8", xml_declaration=True)

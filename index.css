@@ -20,3 +20,12 @@ tbody tr:nth-child(even) {
     content: " ▲";
     color: darkgray;
 }
+
+.tablesorter-headerUnSorted .tablesorter-header-inner::after {
+    content: " =";
+    color: darkgray;
+}
+
+thead > tr > td {
+    min-width: 6em;
+}
