@@ -102,17 +102,13 @@
   </xsl:template>
   
   <xsl:template match="dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCSH']">
-        <xsl:variable name="classif" select="../rdf:value" />
-        <xsl:choose>
-          <xsl:when test="position() != last()">
-            <span class="lcsh-tag"><xsl:value-of select="$classif"/></span><br/>
-          </xsl:when>
-          <xsl:otherwise>
-            <span class="lcsh-tag"><xsl:value-of select="$classif"/></span>
-          </xsl:otherwise>
-        </xsl:choose>
+    <xsl:variable name="classif" select="../rdf:value" />
+    <span class="lcsh-tag"><xsl:value-of select="$classif"/></span>
+    <xsl:if test="position() != last()">
+      <br/>
+    </xsl:if>
   </xsl:template>
-
+  
   <xsl:template match="dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCC']">
       <xsl:variable name="lcc-data" select="document('lcc.xml')/data/item"/>
       <xsl:variable name="classif" select="../rdf:value" />

@@ -1,0 +1,252 @@
+<!-- https://en.wikipedia.org/wiki/Library_of_Congress_Classification -->
+<x:data xmlns:x="skuup">
+  <x:item key="A" value="General Works"/>
+  <x:item key="AC" value="Collections. Series. Collected works"/>
+  <x:item key="AE" value="Encyclopedias"/>
+  <x:item key="AG" value="Dictionaries and other general reference works"/>
+  <x:item key="AI" value="Indexes"/>
+  <x:item key="AM" value="Museums. Collectors and collecting"/>
+  <x:item key="AN" value="Newspapers"/>
+  <x:item key="AP" value="Periodicals"/>
+  <x:item key="AS" value="Academies and learned societies"/>
+  <x:item key="AY" value="Yearbooks. Almanacs. Directories"/>
+  <x:item key="AZ" value="History of scholarship and learning. The humanities"/>
+  <x:item key="B" value="Philosophy. Psychology. Religion"/>
+  <x:item key="B" value="Philosophy (General)"/>
+  <x:item key="BC" value="Logic"/>
+  <x:item key="BD" value="Speculative philosophy"/>
+  <x:item key="BF" value="Psychology"/>
+  <x:item key="BH" value="Aesthetics"/>
+  <x:item key="BJ" value="Ethics"/>
+  <x:item key="BL" value="Religions. Mythology. Rationalism"/>
+  <x:item key="BM" value="Judaism"/>
+  <x:item key="BP" value="Islam. Baháʼísm. Theosophy, etc."/>
+  <x:item key="BQ" value="Buddhism"/>
+  <x:item key="BR" value="Christianity"/>
+  <x:item key="BS" value="The Bible"/>
+  <x:item key="BT" value="Doctrinal theology"/>
+  <x:item key="BV" value="Practical Theology"/>
+  <x:item key="BX" value="Christian Denominations"/>
+  <x:item key="C" value="Auxiliary Sciences of History"/>
+  <x:item key="C" value="Auxiliary Sciences of History"/>
+  <x:item key="CB" value="History of Civilization"/>
+  <x:item key="CC" value="Archaeology"/>
+  <x:item key="CD" value="Diplomatics. Archives. Seals"/>
+  <x:item key="CE" value="Technical Chronology. Calendar"/>
+  <x:item key="CJ" value="Numismatics"/>
+  <x:item key="CN" value="Inscriptions. Epigraphy"/>
+  <x:item key="CR" value="Heraldry"/>
+  <x:item key="CS" value="Genealogy"/>
+  <x:item key="CT" value="Biography"/>
+  <x:item key="D" value="World History and History of Europe, Asia, Africa, Australia, New Zealand, etc."/>
+  <x:item key="D" value="History (General)"/>
+  <x:item key="DA" value="Great Britain"/>
+  <x:item key="DAW" value="Central Europe"/>
+  <x:item key="DB" value="Austria – Liechtenstein – Hungary – Czechoslovakia"/>
+  <x:item key="DC" value="France – Andorra – Monaco"/>
+  <x:item key="DD" value="Germany"/>
+  <x:item key="DE" value="Greco-Roman World"/>
+  <x:item key="DF" value="Greece"/>
+  <x:item key="DG" value="Italy – Malta"/>
+  <x:item key="DH" value="Low Countries – Benelux Countries"/>
+  <x:item key="DJ" value="Netherlands (Holland)"/>
+  <x:item key="DJK" value="Eastern Europe (General)"/>
+  <x:item key="DK" value="Russia. Soviet Union. Former Soviet Republics – Poland"/>
+  <x:item key="DL" value="Northern Europe. Scandinavia"/>
+  <x:item key="DP" value="Spain – Portugal"/>
+  <x:item key="DQ" value="Switzerland"/>
+  <x:item key="DR" value="Balkan Peninsula"/>
+  <x:item key="DS" value="Asia"/>
+  <x:item key="DT" value="Africa"/>
+  <x:item key="DU" value="Oceania (South Seas)"/>
+  <x:item key="DX" value="Romanies"/>
+  <x:item key="E" value="History of America"/>
+  <x:item key="E does not have any subclasses."/>
+  <x:item key="F" value="Local History of the Americas"/>
+  <x:item key="G" value="Geography, Anthropology, Recreation"/>
+  <x:item key="G" value="Geography (General). Atlases. Maps"/>
+  <x:item key="GA" value="Mathematical geography. Cartography"/>
+  <x:item key="GB" value="Physical geography"/>
+  <x:item key="GC" value="Oceanography"/>
+  <x:item key="GE" value="Environmental Sciences"/>
+  <x:item key="GF" value="Human ecology. Anthropogeography"/>
+  <x:item key="GN" value="Anthropology"/>
+  <x:item key="GR" value="Folklore"/>
+  <x:item key="GT" value="Manners and customs (General)"/>
+  <x:item key="GV" value="Recreation. Leisure"/>
+  <x:item key="H" value="Social Sciences"/>
+  <x:item key="H" value="Social sciences (General)"/>
+  <x:item key="HA" value="Statistics"/>
+  <x:item key="HB" value="Economic theory. Demography"/>
+  <x:item key="HC" value="Economic history and conditions"/>
+  <x:item key="HD" value="Industries. Land use. Labor"/>
+  <x:item key="HE" value="Transportation and communications"/>
+  <x:item key="HF" value="Commerce"/>
+  <x:item key="HG" value="Finance"/>
+  <x:item key="HJ" value="Public finance"/>
+  <x:item key="HM" value="Sociology (General)"/>
+  <x:item key="HN" value="Social history and conditions. Social problems. Social reform"/>
+  <x:item key="HQ" value="The family. Marriage, Women and Sexuality"/>
+  <x:item key="HS" value="Societies: secret, benevolent, etc."/>
+  <x:item key="HT" value="Communities. Classes. Races"/>
+  <x:item key="HV" value="Social pathology. Social and public welfare. Criminology"/>
+  <x:item key="HX" value="Socialism. Communism. Anarchism"/>
+  <x:item key="J" value="Political Science"/>
+  <x:item key="J" value="General legislative and executive papers"/>
+  <x:item key="JA" value="Political science (General)"/>
+  <x:item key="JC" value="Political theory"/>
+  <x:item key="JF" value="Political institutions and public administration"/>
+  <x:item key="JJ" value="Political institutions and public administration (North America)"/>
+  <x:item key="JK" value="Political institutions and public administration (United States)"/>
+  <x:item key="JL" value="Political institutions and public administration (Canada, Latin America, etc.)"/>
+  <x:item key="JN" value="Political institutions and public administration (Europe)"/>
+  <x:item key="JQ" value="Political institutions and public administration (Asia, Africa, Australia, Pacific Area, etc.)"/>
+  <x:item key="JS" value="Local government. Municipal government"/>
+  <x:item key="JV" value="Colonies and colonization. Emigration and immigration. International migration"/>
+  <x:item key="JX" value="International law, see JZ and KZ (obsolete)"/>
+  <x:item key="JZ" value="International relations"/>
+  <x:item key="K" value="Law"/>
+  <x:item key="K" value="Law in general. Comparative and uniform law. Jurisprudence"/>
+  <x:item key="KB" value="Religious law in general. Comparative religious law. Jurisprudence"/>
+  <x:item key="KBM" value="Jewish law"/>
+  <x:item key="KBP" value="Islamic law"/>
+  <x:item key="KBR" value="History of canon law"/>
+  <x:item key="KBS" value="Canon law of Eastern churches"/>
+  <x:item key="KBT" value="Canon law of Eastern Rite Churches in Communion with the Holy See of Rome"/>
+  <x:item key="KBU" value="Law of the Roman Catholic Church. The Holy See"/>
+  <x:item key="KD" value="United Kingdom and Ireland"/>
+  <x:item key="KDK" value="United Kingdom and Ireland"/>    
+  <x:item key="KDZ" value="America. North America"/>
+  <x:item key="KE" value="Canada"/>
+  <x:item key="KF" value="United States"/>
+  <x:item key="KG" value="Latin America – Mexico and Central America – West Indies. Caribbean area"/>
+  <x:item key="KH" value="South America"/>
+  <x:item key="KJ" value="Europe"/>
+  <x:item key="KL" value="Asia and Eurasia, Africa, Pacific Area, and Antarctica"/>    
+  <x:item key="KU/KU" value="Law of Australia and New Zealand"/>
+  <x:item key="KZ" value="Law of nations"/>
+  <x:item key="L" value="Education"/>
+  <x:item key="L" value="Education (General)"/>
+  <x:item key="LA" value="History of education"/>
+  <x:item key="LB" value="Theory and practice of education"/>
+  <x:item key="LC" value="Special aspects of education"/>
+  <x:item key="LD" value="Individual institutions – United States"/>
+  <x:item key="LE" value="Individual institutions – America (except United States)"/>
+  <x:item key="LF" value="Individual institutions – Europe"/>
+  <x:item key="LG" value="Individual institutions – Asia, Africa, Indian Ocean islands, Australia, New Zealand, Pacific islands"/>
+  <x:item key="LH" value="College and school magazines and papers"/>
+  <x:item key="LJ" value="Student fraternities and societies, United States"/>
+  <x:item key="LT" value="Textbooks"/>
+  <x:item key="M" value="Music"/>
+  <x:item key="M" value="Music"/>
+  <x:item key="ML" value="Literature on music"/>
+  <x:item key="MT" value="Instruction and study"/>
+  <x:item key="N" value="Fine Arts"/>
+  <x:item key="NA" value="Architecture"/>
+  <x:item key="NB" value="Sculpture"/>
+  <x:item key="NC" value="Drawing. Design. Illustration"/>
+  <x:item key="ND" value="Painting"/>
+  <x:item key="NE" value="Print media"/>
+  <x:item key="NK" value="Decorative arts"/>
+  <x:item key="NX" value="Arts in general"/>
+  <x:item key="P" value="Language and Literature"/>
+  <x:item key="P" value="Philology. Linguistics"/>
+  <x:item key="PA" value="Greek language and literature. Latin language and literature"/>
+  <x:item key="PB" value="Modern languages. Celtic languages and literature"/>
+  <x:item key="PC" value="Romanic languages"/>
+  <x:item key="PD" value="Germanic languages. Scandinavian languages"/>
+  <x:item key="PE" value="English language"/>
+  <x:item key="PF" value="West Germanic languages"/>
+  <x:item key="PG" value="Slavic languages and literature. Baltic languages. Albanian language"/>
+  <x:item key="PH" value="Uralic languages. Basque language"/>
+  <x:item key="PJ" value="Oriental languages and literatures"/>
+  <x:item key="PK" value="Indo-Iranian languages and literature"/>
+  <x:item key="PL" value="Languages and literature of Eastern Asia, Africa, Oceania"/>
+  <x:item key="PM" value="Hyperborean, Native American, and artificial languages"/>
+  <x:item key="PN" value="Literature (General)"/>
+  <x:item key="PQ" value="French literature – Italian literature – Spanish literature – Portuguese literature"/>
+  <x:item key="PR" value="English literature"/>
+  <x:item key="PS" value="American literature"/>
+  <x:item key="PT" value="German literature – Dutch literature – Flemish literature since 1830 – Afrikaans literature -Scandinavian literature – Old Norse literature: Old Icelandic and Old Norwegian – Modern Icelandic literature – Faroese literature – Danish literature – Norwegian literature – Swedish literature"/>
+  <x:item key="PZ" value="Fiction and juvenile belles lettres"/>
+  <x:item key="Q" value="Science"/>
+  <x:item key="Q" value="Science (General)"/>
+  <x:item key="QA" value="Mathematics"/>
+  <x:item key="QB" value="Astronomy"/>
+  <x:item key="QC" value="Physics"/>
+  <x:item key="QD" value="Chemistry"/>
+  <x:item key="QE" value="Geology"/>
+  <x:item key="QH" value="Natural history – Biology"/>
+  <x:item key="QK" value="Botany"/>
+  <x:item key="QL" value="Zoology"/>
+  <x:item key="QM" value="Human anatomy"/>
+  <x:item key="QP" value="Physiology"/>
+  <x:item key="QR" value="Microbiology"/>
+  <x:item key="R" value="Medicine"/>
+  <x:item key="R" value="Medicine (General)"/>
+  <x:item key="RA" value="Public aspects of medicine"/>
+  <x:item key="RB" value="Pathology"/>
+  <x:item key="RC" value="Internal medicine"/>
+  <x:item key="RD" value="Surgery"/>
+  <x:item key="RE" value="Ophthalmology"/>
+  <x:item key="RF" value="Otorhinolaryngology"/>
+  <x:item key="RG" value="Gynecology and Obstetrics"/>
+  <x:item key="RJ" value="Pediatrics"/>
+  <x:item key="RK" value="Dentistry"/>
+  <x:item key="RL" value="Dermatology"/>
+  <x:item key="RM" value="Therapeutics. Pharmacology"/>
+  <x:item key="RS" value="Pharmacy and materia medica"/>
+  <x:item key="RT" value="Nursing"/>
+  <x:item key="RV" value="Botanic, Thomsonian, and Eclectic medicine"/>
+  <x:item key="RX" value="Homeopathy"/>
+  <x:item key="RZ" value="Other systems of medicine"/>
+  <x:item key="S" value="Agriculture"/>
+  <x:item key="S" value="Agriculture (General)"/>
+  <x:item key="SB" value="Horticulture. Plant propagation. Plant breeding"/>
+  <x:item key="SD" value="Forestry. Arboriculture. Silviculture"/>
+  <x:item key="SF" value="Animal husbandry. Animal science"/>
+  <x:item key="SH" value="Aquaculture. Fisheries. Angling"/>
+  <x:item key="SK" value="Hunting"/>
+  <x:item key="T" value="Technology"/>
+  <x:item key="T" value="Technology (General)"/>
+  <x:item key="TA" value="Engineering Civil engineering (General)."/>
+  <x:item key="TC" value="Hydraulic engineering. Ocean engineering"/>
+  <x:item key="TD" value="Environmental technology. Sanitary engineering"/>
+  <x:item key="TE" value="Highway engineering. Roads and pavements"/>
+  <x:item key="TF" value="Railroad engineering and operation"/>
+  <x:item key="TG" value="Bridges"/>
+  <x:item key="TH" value="Building construction"/>
+  <x:item key="TJ" value="Mechanical engineering and machinery"/>
+  <x:item key="TK" value="Electrical engineering. Electronics. Nuclear engineering"/>
+  <x:item key="TL" value="Motor vehicles. Aeronautics. Astronautics"/>
+  <x:item key="TN" value="Mining engineering. Metallurgy"/>
+  <x:item key="TP" value="Chemical technology"/>
+  <x:item key="TR" value="Photography"/>
+  <x:item key="TS" value="Manufacturing engineering. Mass production"/>
+  <x:item key="TT" value="Handicrafts. Arts and crafts"/>
+  <x:item key="TX" value="Home economics"/>
+  <x:item key="U" value="Military Science"/>
+  <x:item key="U" value="Military science (General)"/>
+  <x:item key="UA" value="Armies: Organization, distribution, military situation"/>
+  <x:item key="UB" value="Military administration"/>
+  <x:item key="UC" value="Military maintenance and transportation"/>
+  <x:item key="UD" value="Infantry"/>
+  <x:item key="UE" value="Cavalry. Armor"/>
+  <x:item key="UF" value="Artillery"/>
+  <x:item key="UG" value="Military engineering. Air forces"/>
+  <x:item key="UH" value="Other military services"/>
+  <x:item key="V" value="Naval Science"/>
+  <x:item key="V" value="Naval science (General)"/>
+  <x:item key="VA" value="Navies: Organization, distribution, naval situation"/>
+  <x:item key="VB" value="Naval administration"/>
+  <x:item key="VC" value="Naval maintenance"/>
+  <x:item key="VD" value="Naval seamen"/>
+  <x:item key="VE" value="Marines"/>
+  <x:item key="VF" value="Naval ordnance"/>
+  <x:item key="VG" value="Minor services of navies"/>
+  <x:item key="VK" value="Navigation. Merchant marine"/>
+  <x:item key="VM" value="Naval architecture. Shipbuilding. Marine engineering"/>
+  <x:item key="Z" value="Bibliography, Library Science"/>
+  <x:item key="Z" value="Books (General). Writing. Paleography. Book industries and trade. Libraries. Bibliography"/>
+  <x:item key="ZA" value="Information resources/materials"/>
+</x:data>

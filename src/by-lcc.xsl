@@ -83,6 +83,7 @@
       </tr>
     </xsl:for-each>
   </xsl:template>
+  
 
   <xsl:template match="dcterms:title">
     <xsl:if test="position() = last()">
