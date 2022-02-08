@@ -1,0 +1,22 @@
+table {
+    
+}
+
+thead tr {
+    background-color: #9c3;        
+}
+
+
+tbody tr:nth-child(even) {
+    background-color: #ddd;        
+}
+
+.tablesorter-headerAsc .tablesorter-header-inner::after {
+    content: " ▼";
+    color: darkgray;
+}
+
+.tablesorter-headerDesc .tablesorter-header-inner::after {
+    content: " ▲";
+    color: darkgray;
+}
