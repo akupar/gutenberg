@@ -47,26 +47,6 @@ $(document).ready(function() {
     }
 
    
-    $('table').tablesorter({
-        dateFormat: "yyyy-mm-dd",
-
-        usNumberFormat: false,
-
-
-        ignoreCase: true,
-
-
-        sortLocaleCompare: true,
-
-        debug: false,
-
-        headers: sorters,
-
-        sortList: initialSortList,
-        
-        widthFixed: true,
-
-    });
 
     if ( currentPage !== "index-by-author.html" ) {
         $('#col-author').on('click', function () {
@@ -88,5 +68,16 @@ $(document).ready(function() {
             window.location = "index-by-lcc.html";
         });
     }
+
+
+    $('.author-tag').on('click', function() {
+        window.location = "index-by-author.html#" + $(this).text();
+    });
+    $('.lcsh-tag').on('click', function() {
+        window.location = "index-by-lcsh.html#" + $(this).text();
+    });
+    $('.lcc-tag').on('click', function() {
+        window.location = "index-by-lcc.html#" + $(this).text();
+    });
 });
 
