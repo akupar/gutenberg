@@ -125,9 +125,11 @@
         </xsl:choose>
   </xsl:template>
 
+
   <xsl:template match="dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCC']">
+      <xsl:variable name="lcc-data" select="document('lcc.xml')/data/item"/>
         <xsl:variable name="classif" select="../rdf:value" />
-        <span class="lcc-tag"><xsl:value-of select="$classif"/></span>
+        <abbr class="lcc-tag" title="{$lcc-data[@key = $classif]/@value}"><xsl:value-of select="$classif"/></abbr>
   </xsl:template>
 
   

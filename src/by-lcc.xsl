@@ -72,12 +72,13 @@
 
   <xsl:template match="pgterms:ebook" priority="100">
     <xsl:variable name="id" select="substring-after(@rdf:about, 'ebooks/')"/>
+    <xsl:variable name="lcc-data" select="document('lcc.xml')/data/item"/>
     <xsl:for-each select="dcterms:subject/rdf:Description/dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCC']">
       <tr>
         <td><xsl:apply-templates select="../../../dcterms:creator/pgterms:agent/pgterms:name"/></td>
         <td><a href="{concat('https://gutenberg.org/ebooks/', $id)}"><xsl:apply-templates select="../../../dcterms:title"/></a></td>
         <td><xsl:apply-templates select="../../../dcterms:subject/rdf:Description/dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCSH']"/></td>
-        <td><span id="{../rdf:value}" class="tag"><xsl:value-of select="../rdf:value"/></span></td>
+        <td><abbr id="{../rdf:value}" class="tag" title="{$lcc-data[@key = ../rdf:value]/@value}"><xsl:value-of select="../rdf:value"/></abbr></td>
         <td><xsl:apply-templates select="../../../dcterms:issued"/></td>
       </tr>
     </xsl:for-each>
