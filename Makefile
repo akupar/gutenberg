@@ -1,4 +1,5 @@
 
+all: index.html index-by-author.html index-by-lcsh.html index-by-lcc.html
 
 index.html: catalog-fi.rdf
 	@echo "Converting catalog to html"
