@@ -37,10 +37,9 @@
             <tr>
               <td id="col-author">Tekijä</td>
               <td id="col-title">Nimeke</td>
-              <td>Julkaistu</td>
-              <td>Julkaisija</td>
               <td id="col-lcsh">LCSH</td>
               <td id="col-lcc">LCC</td>
+              <td>Julkaistu</td>
             </tr>
           </thead>
           <tbody>
@@ -59,10 +58,9 @@
     <tr>
       <td><xsl:apply-templates select="dcterms:creator/pgterms:agent/pgterms:name"/></td>
       <td><a href="{concat('https://gutenberg.org/ebooks/', $id)}"><xsl:apply-templates select="dcterms:title"/></a></td>
-      <td><xsl:apply-templates select="dcterms:issued"/></td>
-      <td><xsl:value-of select="dcterms:publisher"/></td>
       <td><xsl:apply-templates select="dcterms:subject/rdf:Description/dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCSH']"/></td>
       <td><xsl:apply-templates select="dcterms:subject/rdf:Description/dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCC']"/></td>
+      <td><xsl:apply-templates select="dcterms:issued"/></td>
     </tr>
   </xsl:template>
 

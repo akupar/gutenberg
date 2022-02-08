@@ -5,8 +5,8 @@ $(document).ready(function() {
     var sorters = {
         0: { sorter: false },
         1: { sorter: false },                
-        4: { sorter: false },
-        5: { sorter: false },                                
+        2: { sorter: false },
+        3: { sorter: false },                                
     };
     
     switch ( currentPage ) {
@@ -24,15 +24,15 @@ $(document).ready(function() {
             break;
         case "index-by-lcsh.html":
             initialSortList = [
-                [4, -1]
+                [2, -1]
             ];
-            sorters[4] = "text";
+            sorters[2] = "text";
             break;
         case "index-by-lcc.html":
             initialSortList = [
-                [5, -1]
+                [3, -1]
             ];
-            sorters[5] = "text";
+            sorters[3] = "text";
             break;
     }
     
