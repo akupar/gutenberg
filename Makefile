@@ -2,7 +2,7 @@
 
 index.html: catalog-fi.rdf
 	@echo "Converting catalog to html"
-	xalan -xsl muunna.xsl -in catalog-fi.rdf -out index.html -param date "'"`date +%Y-%m-%d`"'"
+	xalan -xsl rdf-to-html.xsl -in catalog-fi.rdf -out index.html -param date "'"`date +%Y-%m-%d`"'"
 
 catalog-fi.rdf: rdf-files.tar.bz2
 	@echo "Extract catalog"
@@ -10,5 +10,5 @@ catalog-fi.rdf: rdf-files.tar.bz2
 
 rdf-files.tar.bz2:
 	@echo "Downloading rdf-files.tar.bz2"
-	cp libs/rdf-files.tar.bz2 .
-#wget https://gutenberg.org/cache/epub/feeds/rdf-files.tar.bz2
+	wget https://gutenberg.org/cache/epub/feeds/rdf-files.tar.bz2
+
