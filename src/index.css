@@ -13,28 +13,33 @@ tbody tr:nth-child(even) {
     background-color: #ddd;        
 }
 
-.tablesorter-headerAsc .tablesorter-header-inner::after {
+.header-sorted::after {
     content: " ▼";
-    color: lightgray;
+    color: white;
 }
 
 .tablesorter-headerDesc .tablesorter-header-inner::after {
     content: " ▲";
-    color: lightgray;
+    color: white;
 }
 
-.tablesorter-headerUnSorted .tablesorter-header-inner::after {
+.header-unsorted::after {
     content: " =";
-    color: lightgray;
+    color: white;
 }
 
 thead > tr > td {
     min-width: 6em;
 }
 
-.tag {
+.tag, .lcsh-tag, .lcc-tag {
     border: solid gray 1px;
     background-color: lightgoldenrodyellow;
     display: inline-block;
     border-radius: 0.3em;
+}
+
+
+.author-tag, .lcsh-tag, .lcc-tag, .header-unsorted {
+    cursor: pointer;
 }
