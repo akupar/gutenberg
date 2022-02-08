@@ -108,7 +108,7 @@
             <span class="lcsh-tag"><xsl:value-of select="$classif"/></span><br/>
           </xsl:when>
           <xsl:otherwise>
-            <span class="lcshtag"><xsl:value-of select="$classif"/></span>
+            <span class="lcsh-tag"><xsl:value-of select="$classif"/></span>
           </xsl:otherwise>
         </xsl:choose>
   </xsl:template>
