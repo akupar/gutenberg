@@ -1,3 +1,13 @@
+function localeCompareSupportsLocales() {
+  try {
+    'foo'.localeCompare('bar', 'i');
+  } catch (e) {
+    return e.name === 'RangeError';
+  }
+  return false;
+}
+
+
 $(document).ready(function() {
     var currentPage = window.location.href.split("/").pop();
 
@@ -35,7 +45,8 @@ $(document).ready(function() {
             sorters[3] = "text";
             break;
     }
-    
+
+   
     $('table').tablesorter({
         dateFormat: "yyyy-mm-dd",
 
@@ -52,6 +63,8 @@ $(document).ready(function() {
         headers: sorters,
 
         sortList: initialSortList,
+        
+        widthFixed: true,
 
     });
 

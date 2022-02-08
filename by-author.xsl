@@ -21,7 +21,7 @@
   <xsl:template match="/rdf:RDF" priority="0">
     <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html&gt;
 </xsl:text>
-    <html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="fi" xml:lang="fi">
       <head>
         <title>Project Gutenbergin suomenkieliset kirjat</title>
         <xsl:copy-of select="document('html-template.html')/xhtml:html/xhtml:head/*"/>
