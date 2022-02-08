@@ -13,6 +13,7 @@
   <xsl:param name="date" />
   <xsl:output method="html" indent="yes"/>
 
+
   <xsl:variable name="most-recent">
     <xsl:for-each select="/rdf:RDF/pgterms:ebook/dcterms:issued">
       <xsl:sort data-type="text" order="descending"/>
@@ -113,8 +114,9 @@
   </xsl:template>
 
   <xsl:template match="dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCC']">
-        <xsl:variable name="classif" select="../rdf:value" />
-        <span class="lcc-tag"><xsl:value-of select="$classif"/></span>
+      <xsl:variable name="lcc-data" select="document('lcc.xml')/data/item"/>
+      <xsl:variable name="classif" select="../rdf:value" />
+      <abbr class="lcc-tag" title="{$lcc-data[@key = $classif]/@value}"><xsl:value-of select="$classif"/></abbr>
   </xsl:template>
   
 
