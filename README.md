@@ -2,7 +2,7 @@
 
 Generates a listing of books in Project Gutenberg catalog in given language.
 
-To change the language, change *fi* in the following line in /Makefile to another RFC4646 code:
+To change the language, change *fi* on the following line in /Makefile to another RFC4646 code:
   
     LANG=fi
     
