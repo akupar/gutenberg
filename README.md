@@ -1,1 +1,12 @@
 # gutenberg
+
+Generates a listing of books in Project Gutenberg catalog in given language.
+
+To change the language, change *fi* in the following line in /Makefile to another ISO code:
+  
+    LANG=fi
+    
+Also you need to translate some texts in /src.
+ 
+To build with the makefile, you must have python3, xalan, wget and make installed.
+
