@@ -49,6 +49,7 @@
         <table>
           <thead>
             <tr>
+              <td id="col-anchor"></td>
               <td id="col-author"><span class="header-unsorted">Tekijä</span></td>
               <td id="col-title"><span class="header-unsorted">Nimeke</span></td>
               <td id="col-lcsh"><span class="header-sorted">LCSH</span></td>
@@ -69,18 +70,27 @@
   <xsl:template match="/rdf:RDF/*" priority="0">
   </xsl:template>
   
+
   <xsl:template match="pgterms:ebook" priority="100">
     <xsl:variable name="id" select="substring-after(@rdf:about, 'ebooks/')"/>
     <xsl:for-each select="dcterms:subject/rdf:Description/dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCSH']">
+      <xsl:variable name="lcsh">
+        <xsl:value-of select="../rdf:value"/>
+      </xsl:variable>
+
       <tr>
+        <td class="anchor" id="{$lcsh}"></td>
         <td><xsl:apply-templates select="../../../dcterms:creator/pgterms:agent/pgterms:name"/></td>
         <td><a href="{concat('https://gutenberg.org/ebooks/', $id)}"><xsl:apply-templates select="../../../dcterms:title"/></a></td>
-        <td><span id="{../rdf:value}" class="tag"><xsl:value-of select="../rdf:value"/></span></td>
-        <td><xsl:apply-templates select="../../../dcterms:subject/rdf:Description/dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCC']"/></td>
+        <td><span class="tag"><xsl:value-of select="$lcsh"/></span></td>
+        <td>
+          <xsl:apply-templates select="../../../dcterms:subject/rdf:Description/dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCC']"/>
+        </td>
         <td><xsl:apply-templates select="../../../dcterms:issued"/></td>
       </tr>
     </xsl:for-each>
   </xsl:template>
+  
 
   <xsl:template match="dcterms:title">
     <xsl:if test="position() = last()">
@@ -117,7 +127,7 @@
   
   <xsl:template match="tmp">
     <xsl:for-each select="tr">
-      <xsl:sort select="td[3]"/>
+      <xsl:sort select="td[4]"/>
       <tr><xsl:copy-of select="*" /></tr>
     </xsl:for-each>
   </xsl:template>

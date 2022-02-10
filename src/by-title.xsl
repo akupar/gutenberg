@@ -50,6 +50,7 @@
         <table>
           <thead>
             <tr>
+              <td id="col-anchor"></td>              
               <td id="col-author"><span class="header-unsorted">Tekijä</span></td>
               <td id="col-title"><span class="header-sorted">Nimeke</span></td>
               <td id="col-lcsh"><span class="header-unsorted">LCSH</span></td>
@@ -71,9 +72,13 @@
 
   <xsl:template match="pgterms:ebook" priority="100">
     <xsl:variable name="id" select="substring-after(@rdf:about, 'ebooks/')"/>
+    <xsl:variable name="title">
+      <xsl:apply-templates select="dcterms:title"/>
+    </xsl:variable>
     <tr>
+      <td class="anchor" id="{$title}"><xsl:value-of select="translate($title, '&quot;:,', '')"/></td>
       <td><xsl:apply-templates select="dcterms:creator/pgterms:agent/pgterms:name"/></td>
-      <td><a href="{concat('https://gutenberg.org/ebooks/', $id)}"><xsl:apply-templates select="dcterms:title"/></a></td>
+      <td><a href="{concat('https://gutenberg.org/ebooks/', $id)}"><xsl:value-of select="$title"/></a></td>
       <td><xsl:apply-templates select="dcterms:subject/rdf:Description/dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCSH']"/></td>
       <td><xsl:apply-templates select="dcterms:subject/rdf:Description/dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCC']"/></td>
       <td><xsl:apply-templates select="dcterms:issued"/></td>
@@ -120,7 +125,7 @@
   
   <xsl:template match="tmp">
     <xsl:for-each select="tr">
-      <xsl:sort select="td[2]"/>
+      <xsl:sort select="td[1]"/>
       <tr><xsl:copy-of select="*" /></tr>
     </xsl:for-each>
   </xsl:template>

@@ -1,3 +1,9 @@
+h1 {
+    font-family: sans-serif;
+    text-align: center;
+    font-size: larger;
+}
+
 table {
     border-collapse: collapse;
 }
@@ -36,6 +42,8 @@ thead > tr > td {
     min-width: 6em;
 }
 
+
+
 .tag, .lcsh-tag, .lcc-tag {
     border: solid gray 1px;
     background-color: lightgoldenrodyellow;
@@ -46,4 +54,17 @@ thead > tr > td {
 
 .author-tag, .lcsh-tag, .lcc-tag, .header-unsorted {
     cursor: pointer;
+}
+
+
+.anchor {
+    display: block;
+    position: relative;
+    top: -21px;
+    visibility: hidden;
+}
+
+.anchor, thead tr #col-anchor {
+    width: 0;
+    min-width: 0;
 }

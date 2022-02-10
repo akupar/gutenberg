@@ -50,6 +50,7 @@
         <table>
           <thead>
             <tr>
+              <td id="col-anchor"></td>
               <td id="col-author"><span class="header-unsorted">Tekijä</span></td>
               <td id="col-title"><span class="header-unsorted">Nimeke</span></td>
               <td id="col-lcsh"><span class="header-unsorted">LCSH</span></td>
@@ -74,12 +75,31 @@
     <xsl:variable name="id" select="substring-after(@rdf:about, 'ebooks/')"/>
     <xsl:variable name="lcc-data" select="document('lcc.xml')/data/item"/>
     <xsl:for-each select="dcterms:subject/rdf:Description/dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCC']">
+      <xsl:variable name="lcc">
+        <xsl:apply-templates select="../rdf:value"/>
+      </xsl:variable>
+      
       <tr>
-        <td><xsl:apply-templates select="../../../dcterms:creator/pgterms:agent/pgterms:name"/></td>
-        <td><a href="{concat('https://gutenberg.org/ebooks/', $id)}"><xsl:apply-templates select="../../../dcterms:title"/></a></td>
-        <td><xsl:apply-templates select="../../../dcterms:subject/rdf:Description/dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCSH']"/></td>
-        <td><abbr id="{../rdf:value}" class="tag" title="{$lcc-data[@key = ../rdf:value]/@value}"><xsl:value-of select="../rdf:value"/></abbr></td>
-        <td><xsl:apply-templates select="../../../dcterms:issued"/></td>
+        <td class="anchor" id="{$lcc}"></td>
+        <td>
+          <xsl:apply-templates select="../../../dcterms:creator/pgterms:agent/pgterms:name"/>
+        </td>
+        <td>
+          <a href="{concat('https://gutenberg.org/ebooks/', $id)}">
+            <xsl:apply-templates select="../../../dcterms:title"/>
+          </a>
+        </td>
+        <td>
+          <xsl:apply-templates select="../../../dcterms:subject/rdf:Description/dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCSH']"/>
+        </td>
+        <td>
+          <abbr class="tag" title="{$lcc-data[@key = $lcc]/@value}">
+            <xsl:value-of select="$lcc"/>
+          </abbr>
+        </td>
+        <td>
+          <xsl:apply-templates select="../../../dcterms:issued"/>
+        </td>
       </tr>
     </xsl:for-each>
   </xsl:template>
@@ -125,7 +145,7 @@
   
   <xsl:template match="tmp">
     <xsl:for-each select="tr">
-      <xsl:sort select="td[4]"/>
+      <xsl:sort select="td[5]"/>
       <tr><xsl:copy-of select="*" /></tr>
     </xsl:for-each>
   </xsl:template>

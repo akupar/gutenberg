@@ -36,8 +36,8 @@
                   select="ext:node-set($pass-1)"/>
 
     <!-- Create html file -->
-<xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html&gt;
-</xsl:text>
+    <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html&gt;
+    </xsl:text>
     <html>
       <head>
         <title>Project Gutenbergin suomenkieliset kirjat</title>
@@ -48,10 +48,10 @@
         <p>
           Päivitetty <xsl:value-of select="$date"/>. Viimeisin luettelon teos julkaistu <xsl:value-of select="$most-recent"/>.
         </p>
-        
         <table>
           <thead>
             <tr>
+              <td id="col-anchor"></td>
               <td id="col-author"><span class="header-sorted">Tekijä</span></td>
               <td id="col-title"><span class="header-unsorted">Nimeke</span></td>
               <td id="col-lcsh"><span class="header-unsorted">LCSH</span></td>
@@ -73,15 +73,34 @@
 
   <xsl:template match="pgterms:ebook" priority="100">
     <xsl:variable name="id" select="substring-after(@rdf:about, 'ebooks/')"/>
+    
     <xsl:for-each select="dcterms:creator">
-        <tr>
-          <td><xsl:apply-templates select="./pgterms:agent/pgterms:name"/></td>
-          <td><a href="{concat('https://gutenberg.org/ebooks/', $id)}"><xsl:apply-templates select="../dcterms:title"/></a></td>
-          <td><xsl:apply-templates select="../dcterms:subject/rdf:Description/dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCSH']"/></td>
-          <td><xsl:apply-templates select="../dcterms:subject/rdf:Description/dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCC']"/></td>
-          <td><xsl:apply-templates select="../dcterms:issued"/></td>
-        </tr>
+      <xsl:variable name="author">
+        <xsl:value-of  select="./pgterms:agent/pgterms:name"/>
+      </xsl:variable>
+          
+      <tr>
+        <td class="anchor" id="{$author}"></td><td>
+          <span><xsl:value-of select="$author"/></span>
+        </td>
+        <td>
+          <a href="{concat('https://gutenberg.org/ebooks/', $id)}">
+            <xsl:apply-templates select="../dcterms:title"/>
+          </a>
+        </td>
+        <td>
+          <xsl:apply-templates select="../dcterms:subject/rdf:Description/dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCSH']"/>
+        </td>
+        <td>
+          <xsl:apply-templates select="../dcterms:subject/rdf:Description/dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCC']"/>
+        </td>
+        <td>
+          <xsl:apply-templates select="../dcterms:issued"/>
+        </td>
+      </tr>
+      
     </xsl:for-each>
+    
   </xsl:template>
 
   <xsl:template match="dcterms:title">
@@ -94,24 +113,6 @@
     <xsl:value-of select="substring-before(., '-')"/>
   </xsl:template>
 
-  <xsl:template match="dcterms:creator/pgterms:agent/pgterms:name">
-    <xsl:variable name="author" select="." />
-    <!-- Add anchor for to first element -->
-    <xsl:choose>
-      <xsl:when test="position() = 1 and position() = last()">
-        <span id="{$author}"><xsl:value-of select="$author"/></span>
-      </xsl:when>
-      <xsl:when test="position() = 1">
-        <span id="{$author}"><xsl:value-of select="$author"/></span> &amp; 
-      </xsl:when>
-      <xsl:when test="position() = last()">
-        <span><xsl:value-of select="$author"/></span>
-      </xsl:when>
-      <xsl:otherwise>
-        <span><xsl:value-of select="$author"/></span> &amp; 
-      </xsl:otherwise>
-    </xsl:choose>
-  </xsl:template>
   
   <xsl:template match="dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCSH']">
         <xsl:variable name="classif" select="../rdf:value" />
@@ -138,7 +139,7 @@
   
   <xsl:template match="tmp">
     <xsl:for-each select="tr">
-      <xsl:sort select="td[1]"/>
+      <xsl:sort select="td[2]"/>
       <tr><xsl:copy-of select="*" /></tr>
     </xsl:for-each>
   </xsl:template>
