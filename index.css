@@ -1,13 +1,27 @@
+h1 {
+    font-family: sans-serif;
+    text-align: center;
+    font-size: larger;
+}
+
 table {
     border-collapse: collapse;
+    width: 100%;
 }
 
-
+thead {
+    position: sticky;
+    top: 0;
+    background-color: #9c3;
+}
 
 thead tr {
-    background-color: #9c3;        
+ 
 }
 
+tbody.faded {
+    background-color: #eee;
+}
 
 tbody tr:nth-child(even) {
     background-color: #ddd;        
@@ -32,6 +46,18 @@ thead > tr > td {
     min-width: 6em;
 }
 
+thead > tr > td > a {
+    text-decoration: none;
+    color: black;
+}
+
+
+#col-anchor {
+    width: 0;
+    min-width: 0;
+}
+
+
 .tag, .lcsh-tag, .lcc-tag {
     border: solid gray 1px;
     background-color: lightgoldenrodyellow;
@@ -43,3 +69,18 @@ thead > tr > td {
 .author-tag, .lcsh-tag, .lcc-tag, .header-unsorted {
     cursor: pointer;
 }
+
+tbody > tr > td:first-child {
+    vertical-align: top;
+    width: 0;
+}
+
+/* tbody > tr > td:first-child .anchor */
+.anchor {
+    display: block;
+    position: relative;
+    top: -21px; /* header row height */
+    visibility: hidden;
+    width: 0;
+}
+
