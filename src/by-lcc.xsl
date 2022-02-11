@@ -51,9 +51,9 @@
           <thead>
             <tr>
               <td id="col-anchor"></td>
-              <td id="col-author"><span class="header-unsorted">Tekijä</span></td>
-              <td id="col-title"><span class="header-unsorted">Nimeke</span></td>
-              <td id="col-lcsh"><span class="header-unsorted">LCSH</span></td>
+              <td id="col-author"><a class="header-unsorted">Tekijä</a></td>
+              <td id="col-title"><a class="header-unsorted">Nimeke</a></td>
+              <td id="col-lcsh"><a class="header-unsorted">LCSH</a></td>
               <td id="col-lcc"><span class="header-sorted">LCC</span></td>
               <td>Julkaistu</td>
             </tr>
@@ -80,7 +80,9 @@
       </xsl:variable>
       
       <tr>
-        <td class="anchor" id="{$lcc}"></td>
+        <td>
+          <div class="anchor" id="{$lcc}"><xsl:text>x</xsl:text></div>
+        </td>
         <td>
           <xsl:apply-templates select="../../../dcterms:creator/pgterms:agent/pgterms:name"/>
         </td>

@@ -50,10 +50,10 @@
           <thead>
             <tr>
               <td id="col-anchor"></td>              
-              <td id="col-author"><span class="header-unsorted">Tekijä</span></td>
+              <td id="col-author"><a href="?by=author" class="header-unsorted">Tekijä</a></td>
               <td id="col-title"><span class="header-sorted">Nimeke</span></td>
-              <td id="col-lcsh"><span class="header-unsorted">LCSH</span></td>
-              <td id="col-lcc"><span class="header-unsorted">LCC</span></td>
+              <td id="col-lcsh"><a href="?by=lcsh" class="header-unsorted">LCSH</a></td>
+              <td id="col-lcc"><a href="?by=lcc" class="header-unsorted">LCC</a></td>
               <td>Julkaistu</td>
             </tr>
           </thead>
@@ -75,7 +75,15 @@
       <xsl:apply-templates select="dcterms:title"/>
     </xsl:variable>
     <tr>
-      <td class="anchor" id="{$title}"><xsl:value-of select="translate(translate(translate($title, '&quot;:, ', ''), 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ', 'abcdefghijklmnopqrstuvwxyzåäö'), 'w', 'v')"/></td>
+      <td>
+        <div class="anchor" id="{$title}">
+          <xsl:value-of select="translate(
+                                translate(
+                                translate($title, '&quot;:, ', ''), 
+                                'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ', 
+                                'abcdefghijklmnopqrstuvwxyzåäö'), 'w', 'v')"/>
+        </div>
+      </td>
       <td><xsl:apply-templates select="dcterms:creator/pgterms:agent/pgterms:name"/></td>
       <td><a href="{concat('https://gutenberg.org/ebooks/', $id)}"><xsl:value-of select="$title"/></a></td>
       <td><xsl:apply-templates select="dcterms:subject/rdf:Description/dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCSH']"/></td>

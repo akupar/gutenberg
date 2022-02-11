@@ -6,18 +6,22 @@ h1 {
 
 table {
     border-collapse: collapse;
+    width: 100%;
 }
 
 thead {
     position: sticky;
     top: 0;
-    background-color: #9c3;            
+    background-color: #9c3;
 }
 
 thead tr {
  
 }
 
+tbody.faded {
+    background-color: #eee;
+}
 
 tbody tr:nth-child(even) {
     background-color: #ddd;        
@@ -42,6 +46,16 @@ thead > tr > td {
     min-width: 6em;
 }
 
+thead > tr > td > a {
+    text-decoration: none;
+    color: black;
+}
+
+
+#col-anchor {
+    width: 0;
+    min-width: 0;
+}
 
 
 .tag, .lcsh-tag, .lcc-tag {
@@ -56,15 +70,17 @@ thead > tr > td {
     cursor: pointer;
 }
 
+tbody > tr > td:first-child {
+    vertical-align: top;
+    width: 0;
+}
 
+/* tbody > tr > td:first-child .anchor */
 .anchor {
     display: block;
     position: relative;
-    top: -21px;
+    top: -21px; /* header row height */
     visibility: hidden;
+    width: 0;
 }
 
-.anchor, thead tr #col-anchor {
-    width: 0;
-    min-width: 0;
-}

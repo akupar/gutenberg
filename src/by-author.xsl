@@ -53,9 +53,9 @@
             <tr>
               <td id="col-anchor"></td>
               <td id="col-author"><span class="header-sorted">Tekijä</span></td>
-              <td id="col-title"><span class="header-unsorted">Nimeke</span></td>
-              <td id="col-lcsh"><span class="header-unsorted">LCSH</span></td>
-              <td id="col-lcc"><span class="header-unsorted">LCC</span></td>
+              <td id="col-title"><a class="header-unsorted">Nimeke</a></td>
+              <td id="col-lcsh"><a class="header-unsorted">LCSH</a></td>
+              <td id="col-lcc"><a class="header-unsorted">LCC</a></td>
               <td>Julkaistu</td>
             </tr>
           </thead>
@@ -80,7 +80,11 @@
       </xsl:variable>
           
       <tr>
-        <td class="anchor" id="{$author}"></td>
+        <td>
+          <div class="anchor" id="{$author}">
+            <xsl:value-of select="translate($author, 'Ww', 'Vv')"/>
+          </div>
+        </td>
         <td>
           <span><xsl:value-of select="$author"/></span>
         </td>
@@ -140,7 +144,7 @@
   
   <xsl:template match="tmp">
     <xsl:for-each select="tr">
-      <xsl:sort select="td[2]"/>
+      <xsl:sort select="td[1]"/>
       <tr><xsl:copy-of select="*" /></tr>
     </xsl:for-each>
   </xsl:template>
