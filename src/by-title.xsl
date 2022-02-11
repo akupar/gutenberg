@@ -13,7 +13,6 @@
   <xsl:param name="date" />
   <xsl:output method="html" indent="yes"/>
 
-
   <xsl:variable name="most-recent">
     <xsl:for-each select="/rdf:RDF/pgterms:ebook/dcterms:issued">
       <xsl:sort data-type="text" order="descending"/>
@@ -76,7 +75,7 @@
       <xsl:apply-templates select="dcterms:title"/>
     </xsl:variable>
     <tr>
-      <td class="anchor" id="{$title}"><xsl:value-of select="translate($title, '&quot;:,', '')"/></td>
+      <td class="anchor" id="{$title}"><xsl:value-of select="translate(translate(translate($title, '&quot;:, ', ''), 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ', 'abcdefghijklmnopqrstuvwxyzåäö'), 'w', 'v')"/></td>
       <td><xsl:apply-templates select="dcterms:creator/pgterms:agent/pgterms:name"/></td>
       <td><a href="{concat('https://gutenberg.org/ebooks/', $id)}"><xsl:value-of select="$title"/></a></td>
       <td><xsl:apply-templates select="dcterms:subject/rdf:Description/dcam:memberOf[@rdf:resource='http://purl.org/dc/terms/LCSH']"/></td>
