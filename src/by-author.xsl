@@ -80,7 +80,8 @@
       </xsl:variable>
           
       <tr>
-        <td class="anchor" id="{$author}"></td><td>
+        <td class="anchor" id="{$author}"></td>
+        <td>
           <span><xsl:value-of select="$author"/></span>
         </td>
         <td>
